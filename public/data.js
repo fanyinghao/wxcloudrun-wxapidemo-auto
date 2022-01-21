@@ -5,8 +5,18 @@ window.onload = function () {
     let items = ''
     let len = data.length
     for (var i = 0; i < 40 - len; i++) {
+      const UNAME = {
+        0: '萌姜',
+        1: '小姜',
+        2: '大姜',
+        3: '辣姜',
+        4: '够姜'
+      }
+      var rand = Math.floor(Math.random() * Object.keys(UNAME).length);
+      var randName = UNAME[Object.keys(UNAME)[rand]];
       data.push({
         ...data[i],
+        name: randName,
         msg_url: 'yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/2022.amr?' + Math.floor(Math.random() * 10000)
       })
     }
