@@ -62,7 +62,9 @@ router.post('/wx/call', async function (req, res, next) {
       const UNAME = {
         0: '萌姜',
         1: '小姜',
-        2: '大姜'
+        2: '大姜',
+        3: '辣姜',
+        4: '够姜'
       }
       var rand = Math.floor(Math.random() * Object.keys(UNAME).length);
       var randName = UNAME[Object.keys(UNAME)[rand]];
