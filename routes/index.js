@@ -21,7 +21,7 @@ router.get('/images', async function (req, res, next) {
 router.get("/voice", async (req, res) => {
   try {
     const result = await VoiceMessage.findAll({
-      order: [['createdAt', 'DESC']],
+      order: [['id', 'DESC']],
       limit: 50
     })
     res.send({
