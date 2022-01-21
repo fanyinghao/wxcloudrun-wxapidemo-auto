@@ -3,8 +3,15 @@ window.onload = function () {
   window.call().then(({ data }) => {
     let tagBall = window.document.getElementById('tagBall')
     let items = ''
+    let len = data.length
+    for (var i = 0; i < 40 - len; i++) {
+      data.push({
+        ...data[i],
+        msg_url: 'yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/2022.amr?' + Math.floor(Math.random() * 10000)
+      })
+    }
     for (var i = 0; i < data.length; i++) {
-      items += `<a class="tag" href="#" onclick="onClick(this, 'https://${data[i].msg_url}')">
+      items += `<a class="tag" href="#" onclick="onClick(this, 'https://${data[i].msg_url}', '${data[i].name}')">
         <span>${data[i].name}</span>
         <div class="voice">
             <div class="bg"></div>
@@ -24,18 +31,18 @@ window.onload = function () {
       CY = paper.offsetHeight / 2,
       EX = paper.offsetLeft + document.body.scrollLeft + document.documentElement.scrollLeft,
       EY = paper.offsetTop + document.body.scrollTop + document.documentElement.scrollTop,
-      
-    function getClass(className) {
-      var ele = document.getElementsByTagName("*");
-      var classEle = [];
-      for (var i = 0; i < ele.length; i++) {
-        var cn = ele[i].className;
-        if (cn === className) {
-          classEle.push(ele[i]);
+
+      function getClass(className) {
+        var ele = document.getElementsByTagName("*");
+        var classEle = [];
+        for (var i = 0; i < ele.length; i++) {
+          var cn = ele[i].className;
+          if (cn === className) {
+            classEle.push(ele[i]);
+          }
         }
+        return classEle;
       }
-      return classEle;
-    }
 
     function init() {
       for (var i = 0; i < tagEle.length; i++) {
