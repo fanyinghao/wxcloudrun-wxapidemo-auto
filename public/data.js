@@ -83,18 +83,18 @@ window.onload = function () {
       }, 17)
     }
     if ("addEventListener" in window) {
-      paper.addEventListener("mousemove", function (event) {
-        var x = event.clientX - EX - CX;
-        var y = event.clientY - EY - CY;
-        angleY = x * 0.0001;
-        angleX = y * 0.0001;
+      paper.addEventListener("touchmove", function (event) {
+        var x = event.touches[0].clientX - EX - CX;
+        var y = event.touches[0].clientY - EY - CY;
+        angleY = x * -0.0001;
+        angleX = y * -0.0001;
       });
     } else {
-      paper.attachEvent("onmousemove", function (event) {
-        var x = event.clientX - EX - CX;
-        var y = event.clientY - EY - CY;
-        angleY = x * 0.0001;
-        angleX = y * 0.0001;
+      paper.attachEvent("ontouchmove", function (event) {
+        var x = event.touches[0].clientX - EX - CX;
+        var y = event.touches[0].clientY - EY - CY;
+        angleY = x * -0.0001;
+        angleX = y * -0.0001;
       });
     }
 
