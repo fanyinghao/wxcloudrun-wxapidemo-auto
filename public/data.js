@@ -17,15 +17,13 @@ window.onload = function () {
       data.push({
         ...data[i],
         name: randName,
-        msg_url: 'yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/2022.amr?' + Math.floor(Math.random() * 10000)
+        msg_url: ''
       })
     }
     for (var i = 0; i < data.length; i++) {
       items += `<a class="tag" href="#" onclick="onClick(this, 'https://${data[i].msg_url}', '${data[i].name}')">
         <span>${data[i].name}</span>
-        <div class="voice">
-            <div class="bg"></div>
-        </div>
+        ${data[i].msg_url ? '<div class="voice"><div class="bg"></div></div>' : ''}
       </a>`
     }
     tagBall.innerHTML = items
