@@ -6,22 +6,31 @@
 body {
   background-color: #000;
   margin: auto;
+  -moz-user-select:none;
+  -webkit-user-select:none;
+  user-select:none;    
 }
 
 .title {
+  background-color: #000;
   color: #46C667;
   font-size: 50px;
   font-weight: 200;
-  padding: 200px;
+  padding-top: 200px;
   text-align: center;
+  position: fixed;
+  width: 100%;
+  padding-bottom: 100vh;
 }
 
 .tagBall {
+  background-color: #000;
   width: 100%;
   height: 100vw;
   position: absolute;
   top: 20vh;
   /* left: 20px; */
+  position: fixed;
 }
 
 .tagBall .bg {
@@ -90,6 +99,7 @@ body {
 }
 
 .control {
+  background-color: #000;
   margin: 50px;
   position: fixed;
   bottom: 20px;
