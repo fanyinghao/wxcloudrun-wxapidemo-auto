@@ -23,12 +23,13 @@
     </div>
     <div class="control">
       <div class="control-head">
-        <img id="contraol-avatar" class="control-avatar" src="https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/IMG_5785.JPG" />
+        <img id="contraol-avatar" class="control-avatar"
+          src="https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/IMG_5785.JPG" />
         <span id="contraol-name">一颗白球</span>
       </div>
       <a href="#" onclick="onClick(this, 'https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/2022.amr')">
         <div class="voice">
-          <div class="bg"></div>
+          <div class="bg" id="control-play-bg"></div>
         </div>
       </a>
     </div>
@@ -44,6 +45,21 @@
     defaultAvatar = "https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/IMG_5785.JPG"
     audio = new BenzAMRRecorder();
     audio.initWithUrl(defaultAmr);
+    audio.onPlay(function () {
+      window.document.getElementById('control-play-bg').classList.add('voicePlay');
+    })
+    audio.onResume(function () {
+      window.document.getElementById('control-play-bg').classList.add('voicePlay');
+    })
+    audio.onPause(function () {
+      window.document.getElementById('control-play-bg').classList.remove('voicePlay');
+    })
+    audio.onStop(() => {
+      window.document.getElementById('control-play-bg').classList.remove('voicePlay');
+    });
+    audio.onEnded(() => {
+      window.document.getElementById('control-play-bg').classList.remove('voicePlay');
+    });
     playing = defaultAmr
     // avatar = 'https://7072-prod-0gl05vc072c6e785-1309342121.tcb.qcloud.la/qinglan.jpeg'
 
@@ -76,6 +92,9 @@
         audio.onPause(function () {
           elem.querySelectorAll('.bg')[0].classList.remove('voicePlay');
         })
+        audio.onStop(() => {
+          elem.querySelectorAll('.bg')[0].classList.remove('voicePlay');
+        });
         audio.onEnded(() => {
           elem.querySelectorAll('.bg')[0].classList.remove('voicePlay');
         });
