@@ -21,7 +21,7 @@
     </div>
     <div class="tagBall" id="tagBall">
     </div>
-    <div class="control">
+    <!-- <div class="control">
       <div class="control-head">
         <img id="contraol-avatar" class="control-avatar"
           src="https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/IMG_5785.JPG" />
@@ -32,7 +32,7 @@
           <div class="bg" id="control-play-bg"></div>
         </div>
       </a>
-    </div>
+    </div> -->
   </div>
   <script src="/static/data.js"></script>
   <script>
@@ -44,23 +44,23 @@
     defaultAmr = 'https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/2022.amr'
     defaultAvatar = "https://yisi-1253291586.cos.ap-guangzhou.myqcloud.com/weekup/IMG_5785.JPG"
     audio = new BenzAMRRecorder();
-    audio.initWithUrl(defaultAmr);
-    audio.onPlay(function () {
-      window.document.getElementById('control-play-bg').classList.add('voicePlay');
-    })
-    audio.onResume(function () {
-      window.document.getElementById('control-play-bg').classList.add('voicePlay');
-    })
-    audio.onPause(function () {
-      window.document.getElementById('control-play-bg').classList.remove('voicePlay');
-    })
-    audio.onStop(() => {
-      window.document.getElementById('control-play-bg').classList.remove('voicePlay');
-    });
-    audio.onEnded(() => {
-      window.document.getElementById('control-play-bg').classList.remove('voicePlay');
-    });
-    playing = defaultAmr
+    // audio.initWithUrl(defaultAmr);
+    // audio.onPlay(function () {
+    //   window.document.getElementById('control-play-bg').classList.add('voicePlay');
+    // })
+    // audio.onResume(function () {
+    //   window.document.getElementById('control-play-bg').classList.add('voicePlay');
+    // })
+    // audio.onPause(function () {
+    //   window.document.getElementById('control-play-bg').classList.remove('voicePlay');
+    // })
+    // audio.onStop(() => {
+    //   window.document.getElementById('control-play-bg').classList.remove('voicePlay');
+    // });
+    // audio.onEnded(() => {
+    //   window.document.getElementById('control-play-bg').classList.remove('voicePlay');
+    // });
+    playing = 'defaultAmr'
     // avatar = 'https://7072-prod-0gl05vc072c6e785-1309342121.tcb.qcloud.la/qinglan.jpeg'
 
     function onClick(elem, url, name) {
